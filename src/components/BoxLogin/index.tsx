@@ -28,8 +28,11 @@ const BoxLogin = () => {
         <input type="text" placeholder="E-mail" name="email" />
         <input type="password" placeholder="Senha" name="password" />
         <ButtonLarge value="Entrar" type="submit" />
+        <ButtonLarge
+          value="Cadastre-se"
+          onClick={() => navigate("/register")}
+        />
       </S.BoxLoginForm>
-      <a onClick={() => navigate("/register")}>Cadastre-se</a>
     </S.BoxLogin>
   );
 };
