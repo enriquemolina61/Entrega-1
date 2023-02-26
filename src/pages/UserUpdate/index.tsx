@@ -41,7 +41,7 @@ const UpdateUser = () => {
   };
   const handleDelete = async () => {
     await deleteUser(params.id as string);
-    localStorage.removeItem("accessToken");
+    // localStorage.removeItem("accessToken");
     navigate("/");
   };
 
