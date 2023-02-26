@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-pattern */
 import { useEffect, useState } from "react";
 import { getUsers } from "../../utils/api/api";
 import { Users } from "../../types/product";
