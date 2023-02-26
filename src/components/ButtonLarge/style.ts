@@ -21,5 +21,8 @@ export const ButtonLarge = styled.button`
       box-shadow: none;
       cursor: not-allowed;
     }
+    &:hover {
+      background: ${theme.colors.secondaryColor};
+    }
   `}
 `;
