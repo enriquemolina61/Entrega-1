@@ -59,6 +59,7 @@ const BoxRegister = () => {
         <input type="text" placeholder="CPF" name="cpf" />
         <input type="text" placeholder="Imagem do usuário" name="image" />
         <ButtonLarge value="Cadastrar" type="submit" />
+        <ButtonLarge value="Voltar" onClick={() => navigate("/login")} />
       </S.BoxRegisterForm>
     </S.BoxRegister>
   );

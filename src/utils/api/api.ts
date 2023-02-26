@@ -65,18 +65,6 @@ export const getProductById = async (id: string) => {
   }
 };
 
-export const updateProduct = async (id: string, product: Product) => {
-  try {
-    const response = await axios.patch(`/product/${id}`, product);
-  } catch (error) {}
-};
-
-export const deleteProduct = async (id: string) => {
-  try {
-    const response = await axios.delete(`/product/${id}`);
-  } catch (error) {}
-};
-
 export const createProduct = async (product: Product) => {
   try {
     const response = await axios.post(`/product`, product);
@@ -156,7 +144,14 @@ export const updateUser = async (id: string, updatedUser: UpdateUserType) => {
 export const deleteUser = async (id: string) => {
   try {
     const response = await axios.delete(`/user/${id}`);
-  } catch (error) {}
+    if (response.status === 200) {
+      return true;
+    }
+  } catch (error) {
+    console.log(error);
+
+    return false;
+  }
 };
 
 export const getUserById = async (id: string) => {

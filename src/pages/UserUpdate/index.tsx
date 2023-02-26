@@ -1,10 +1,7 @@
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import Menu from "../../components/Menu";
-import { navItems } from "../../data/navigation";
 import { UpdateUserType, Users } from "../../types/product";
-import { RoutesPath } from "../../types/routes";
 import { deleteUser, getUserById, updateUser } from "../../utils/api/api";
 import * as S from "./style";
 
@@ -64,7 +61,7 @@ const UpdateUser = () => {
       setIsLoaded(true);
     };
     getById();
-  }, []);
+  }, [params.id]);
 
   return (
     <S.Home>
@@ -73,7 +70,7 @@ const UpdateUser = () => {
           <S.HomeHeaderDetails>
             <div>
               <S.HomeHeaderDetailsLogo>
-                <h2>Web Tech</h2>
+                <h2>Visual Users</h2>
                 <NavLink to={"/"}>Voltar</NavLink>
               </S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>{date}</S.HomeHeaderDetailsDate>

@@ -14,7 +14,7 @@ const Users = () => {
         <header>
           <S.HomeHeaderDetails>
             <div>
-              <S.HomeHeaderDetailsLogo>Web TECH</S.HomeHeaderDetailsLogo>
+              <S.HomeHeaderDetailsLogo>Visual Users</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>{date}</S.HomeHeaderDetailsDate>
             </div>
             <NavLink to={"/register"}>Criar Usuário</NavLink>
