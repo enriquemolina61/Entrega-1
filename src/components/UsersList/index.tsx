@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getUsers } from "../../utils/api/api";
 import { Users } from "../../types/product";
 import { UserItem } from "../UserItem";
-import { StyledUsersList } from "./style";
+import { HomeHeaderDetailsSearch, StyledUsersList } from "./style";
 type Props = {};
 
 export default function UserList({}: Props) {
@@ -15,18 +15,34 @@ export default function UserList({}: Props) {
     }
     getUser();
   }, []);
+  const [filterInput, setfilterInput] = useState("");
   return (
     <StyledUsersList>
-      {users.length > 0 &&
-        users.map((users) => (
-          <UserItem
-            userId={users.id as string}
-            key={users.id}
-            name={users.name}
-            email={users.email}
-            image={users.image}
-          />
-        ))}
+      <HomeHeaderDetailsSearch>
+        <input
+          value={filterInput}
+          type="text"
+          onChange={(event) => setfilterInput(event.target.value)}
+          placeholder="Procure pelo nome"
+        />
+      </HomeHeaderDetailsSearch>
+      {users.length === 0 ? (
+        <p>Nenhum usuário encontrado</p>
+      ) : (
+        users
+          .filter((user) =>
+            user.name.toLowerCase().includes(filterInput.toLowerCase())
+          )
+          .map((user) => (
+            <UserItem
+              userId={user.id as string}
+              key={user.id}
+              name={user.name}
+              email={user.email}
+              image={user.image}
+            />
+          ))
+      )}
     </StyledUsersList>
   );
 }
