@@ -37,12 +37,12 @@ const UpdateUser = () => {
     }
 
     await updateUser(params.id as string, data);
-    navigate("/user");
+    navigate("/");
   };
   const handleDelete = async () => {
     await deleteUser(params.id as string);
     localStorage.removeItem("accessToken");
-    navigate("/login");
+    navigate("/");
   };
 
   useEffect(() => {
