@@ -23,6 +23,6 @@ export const StyledUserItem = styled.div`
     border-radius: 0.5rem;
   }
   h2 {
-    color: #e26b6b;
+    color: #5c5bc6;
   }
 `;
